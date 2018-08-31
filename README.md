@@ -1,4 +1,4 @@
-# **Tensorflow** implementation for **Facial Expression Synthesis using GAN**
+# **Tensorflow** implementation for **Facial Expression Synthesis and Recognition using GAN**
 
 <p align="center"> <img src="./readme_pics/training_sample.png" width="95%"> </p>
 
@@ -50,3 +50,4 @@
 - next...
 	- models几个网络考虑用什么normalization或者不用？
 	- Dz和Dimg两个GAN loss怎么搭配优化？
+	- 加入Recognition模块加入
