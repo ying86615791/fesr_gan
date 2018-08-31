@@ -61,7 +61,7 @@ experiment_name = args_.experiment_name
 
 # data
 sess = tl.session()
-te_data = data.ImgDataPair('./data/CK+/cross_validation1/test_peak', img_size, batch_size_test, 
+te_data = data.ImgDataPair('./data/CK+/cross_validation1/train_peak', img_size, batch_size_test, 
                       pair=False,drop_remainder=False, shuffle=False, repeat=1, sess=sess, crop=use_cropped_img)
 n_classes = len(te_data.class_to_idx)
 

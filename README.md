@@ -4,7 +4,24 @@
 - data.py中ImgDataPair类实现pair image + label的读取
 - 其他多个模块参考[AttGAN](https://github.com/LynnHo/AttGAN-Tensorflow)
 - 使用identity preserve loss需要下载[vgg-face的MatConvNet预训练模型](http://www.vlfeat.org/matconvnet/models/vgg-face.mat)
+- data中数据路径格式，参考[Pytorch的DatasetFolder的解析方式](https://github.com/pytorch/vision/blob/master/torchvision/datasets/folder.py)
 
+    ```
+    data
+    └── CK+
+		└── cross_validation1
+			├──train  0-6表示类别名
+			   ├──0/*.[png,jpg...]
+			   ├──1/*.[png,jpg...]
+			   ├──2/*.[png,jpg...]
+			   ├──3/*.[png,jpg...]
+			   ├──4/*.[png,jpg...]
+			   ├──5/*.[png,jpg...]
+			   └──6/*.[png,jpg...]
+			├──test
+			└──...
+    ```
+	
 - training
 
 	- for 128x128 images
