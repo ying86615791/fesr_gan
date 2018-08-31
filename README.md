@@ -2,7 +2,7 @@
 
 <p align="center"> <img src="./readme_pics/training_sample.png" width="95%"> </p>
 
-- Reference: [AttGAN](https://github.com/LynnHo/AttGAN-Tensorflow)
+- 参考[AttGAN](https://github.com/LynnHo/AttGAN-Tensorflow), 实现人脸表情编辑
 
 - data.py中ImgDataPair类实现pair image + label的读取
 
