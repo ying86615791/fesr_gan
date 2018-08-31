@@ -266,9 +266,9 @@ class ImgDataPair(Dataset):
 
 if __name__ == '__main__':
     
-    data_tr = ImgDataPair('./exp_data/CK+/cross_validation1/train', 128, 32, 
+    data_tr = ImgDataPair('./data/CK+/cross_validation1/train', 128, 32, 
                           pair=True, repeat=1)
-    data_te = ImgDataPair('./exp_data/CK+/cross_validation1/test_peak', 128, 15, 
+    data_te = ImgDataPair('./data/CK+/cross_validation1/test_peak', 128, 15, 
                           pair=True,drop_remainder=False, repeat=1)
     
     images = data_tr.img_paths
@@ -276,14 +276,19 @@ if __name__ == '__main__':
     
     step = 0
     try:
-        while True:
-            print(step)
-            xt, xpt, yt = data_tr.batch_op
-            print(tl.shape(xt))
-            
-            x, xp, y = data_te.get_next()
-            print(np.shape(x))
-            step += 1
+#        while True:
+#            print(step)
+#            xt, xpt, yt = data_tr.batch_op
+#            print(tl.shape(xt))
+#            
+#            x, xp, y = data_te.get_next()
+#            print(np.shape(x))
+#            step += 1
+        for idx, batch in enumerate(data_te):
+            x = batch[0]
+            xp = batch[1]
+            label = batch[2]
+            print('idx:%d, shape:%s'%(idx,np.shape(x)))
     except:
 #        traceback.print_exc()
         print('Done')

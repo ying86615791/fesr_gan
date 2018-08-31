@@ -250,8 +250,7 @@ g_summary = tl.summary({
 d_summary = tf.summary.merge([d_summary, lr_summary])
 
 # sample
-zs_sample = Genc(xa_sample, is_training=False)
-x_sample = Gdec(zs_sample, _b_sample, is_training=False)
+x_sample = Gdec(Genc(xa_sample, is_training=False), _b_sample, is_training=False)
 x_sample_rand = Gdec([rand_iden], _b_sample, is_training=False)
 
 
