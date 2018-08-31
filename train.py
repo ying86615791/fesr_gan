@@ -331,7 +331,7 @@ try:
             # sample
             if (it + 1) % 100 == 0:
                 x_sample_opt_list = [xa_sample_ipt, np.full((n_sample, img_size, img_size // 10, 3), -1.0)] # 输入图右边一小列黑色间隔
-                rand_sample_opt_list = []
+                rand_sample_opt_list = [np.full((batch_size, img_size, img_size // 10, 3), -1.0)] # rand图左边一小列黑色间隔，与imgs from face representation隔开
                 for i, b_sample_ipt in enumerate(b_sample_ipt_list):
                     _b_sample_ipt = (b_sample_ipt * 2 - 1) * thres_int
                     if i > 0:

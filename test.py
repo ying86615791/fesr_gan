@@ -23,7 +23,7 @@ parser.add_argument('--experiment_name', dest='experiment_name', default='ck_cv1
 parser.add_argument('--test_int', dest='test_int', type=float, default=1.0, help='test_int')
 parser.add_argument('--test_int_min', dest='test_int_min', type=float, default=-1.0, help='test_int_min')
 parser.add_argument('--test_int_max', dest='test_int_max', type=float, default=1.0, help='test_int_max')
-parser.add_argument('--n_slide', dest='n_slide', type=int, default=10, help='n_slide')
+parser.add_argument('--n_slide', dest='n_slide', type=int, default=1, help='n_slide')
 args_ = parser.parse_args()
 with open('./output/%s/setting.txt' % args_.experiment_name) as f:
     args = json.load(f)
@@ -127,7 +127,7 @@ try:
                 test_int = (test_int_max - test_int_min) / (n_slide - 1) * inte + test_int_min
                 
             x_list = [x, np.full((batch_size, img_size, img_size // 10, 3), -1.0)] # 输入图右边一小列黑色间隔
-            rand_list = []
+            rand_list = [np.full((batch_size, img_size, img_size // 10, 3), -1.0)] # rand图左边一小列黑色间隔，与imgs from face representation隔开
             for i, y_hot in enumerate(y_hot_list):
                 y_hot = (y_hot * 2 - 1) * thres_int # 无论做不做intensity控制, thres_int都是必须先设置的
                 
