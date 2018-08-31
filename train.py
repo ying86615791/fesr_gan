@@ -53,7 +53,7 @@ parser.add_argument('--test_int', dest='test_int', type=float, default=1.0)
 parser.add_argument('--n_sample', dest='n_sample', type=int, default=16, help='# of sample images')
 # others
 parser.add_argument('--use_cropped_img', dest='use_cropped_img', action='store_true')
-parser.add_argument('--experiment_name', dest='experiment_name', default='128_shortcut0_inject0_none')#datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+parser.add_argument('--experiment_name', dest='experiment_name', default='ck_cv1_shortcut0_dz_gencfc')#datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
 
 args = parser.parse_args()
 # model
