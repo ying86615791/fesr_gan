@@ -1,0 +1,9 @@
+*.zip
+*.pyc
+*.gz
+*.mat
+__pycache__
+.idea
+AttGAN-Tensorflow
+data
+output
