@@ -117,7 +117,7 @@ try:
             y_hot_list.append(tmp)
         
         run_inte = False
-        if n_slide != 1 and batch_size == 1:
+        if n_slide != 1 and batch_size == 1: # 如果做intensity, batch_size只能为1，因为每一行表示一种强度
             run_inte = True
             
         # get sample
