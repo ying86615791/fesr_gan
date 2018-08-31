@@ -14,12 +14,12 @@
 		
 - testing
 
-	-- test with different expressions
+	- test with different expressions
 	
 		```console
 		python test.py --experiment_name ck_cv1_shortcut0_dz_gencfc --n_slide 1
 		
-	-- test with different expressions and intensity control
+	- test with different expressions and intensity control
 	
 		```console
 		python test.py --experiment_name ck_cv1_shortcut0_dz_gencfc --test_int_min -1.0 --test_int_max 1.0 --n_slide 10
