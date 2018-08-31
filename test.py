@@ -71,8 +71,8 @@ _b_sample = tf.one_hot(_b_sample, n_classes)
 rand_iden = tf.reshape(rand_z, [-1, 2, 2, z_dim//(2**2)])
 
 # sample
-x_sample = Gdec(Genc(xa_sample, is_training=False), _b_sample, is_training=True)
-x_sample_rand = Gdec([rand_iden], _b_sample, is_training=True)
+x_sample = Gdec(Genc(xa_sample, is_training=False), _b_sample, is_training=False)
+x_sample_rand = Gdec([rand_iden], _b_sample, is_training=False)
 
 
 # ==============================================================================
@@ -129,8 +129,8 @@ try:
 
         save_dir = './output/%s/sample_testing' % experiment_name
         pylib.mkdir(save_dir)
-#        im.imwrite(im.immerge(sample, n_sample, 1), '%s/Iter_(%d)_Epoch_(%d)_(%dof%d).jpg' % (save_dir, it, epoch, it_in_epoch, it_per_epoch))
-        im.imwrite(sample.squeeze(0), '%s/%d.png' % (save_dir, idx))
+        im.imwrite(im.immerge(sample, batch_size, 1),  '%s/%d.png' % (save_dir, idx))
+#        im.imwrite(sample.squeeze(0), '%s/%d.png' % (save_dir, idx)) # one row by one row
         print('%d.png done!' % (idx))
 except:
     traceback.print_exc()
